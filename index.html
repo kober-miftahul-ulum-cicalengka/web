@@ -812,6 +812,79 @@
       background: rgba(255, 255, 255, 0.24);
     }
 
+    .cerita-footer-box {
+      background: var(--bg-navy-card);
+      border: 1px solid #334155;
+      border-radius: 16px;
+      padding: 12px;
+      color: #E2E8F0;
+    }
+
+    .cerita-footer-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      max-height: 185px;
+      overflow-y: auto;
+      margin-bottom: 8px;
+      padding-right: 2px;
+    }
+
+    .cerita-footer-item {
+      background: #0F172A;
+      border: 1px solid #334155;
+      border-radius: 10px;
+      padding: 6px 8px;
+      font-size: 11.5px;
+      line-height: 1.35;
+    }
+
+    .cerita-footer-form {
+      display: grid;
+      gap: 5px;
+    }
+
+    .cerita-footer-input,
+    .cerita-footer-textarea {
+      width: 100%;
+      background: #0F172A;
+      color: #F8FAFC;
+      border: 1px solid #475569;
+      border-radius: 8px;
+      padding: 5px 8px;
+      font-size: 11.5px;
+      font-family: inherit;
+    }
+
+    .cerita-footer-textarea {
+      resize: vertical;
+      min-height: 28px;
+    }
+
+    .cerita-footer-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+    }
+
+    .cerita-footer-file {
+      font-size: 10.5px;
+      color: #CBD5E1;
+      max-width: 155px;
+    }
+
+    .cerita-footer-btn {
+      background: #16A34A;
+      color: #FFFFFF;
+      border: 0;
+      border-radius: 8px;
+      padding: 5px 10px;
+      font-size: 11.5px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
     /* FOOTER */
     .site-footer {
       background: var(--bg-navy);
@@ -1166,7 +1239,7 @@
     </div>
   </section>
 
-
+  
   <!-- PROFIL & NILAI INTI -->
   <section id="profil" class="section">
     <div class="container">
@@ -1390,33 +1463,20 @@
       </div>
     </div>
   </section>
-
-<section id="cerita-ayah-bunda" style="max-width: 540px; margin: 20px auto; padding: 10px 12px;">
-  <div style="font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; color: #0f172a;">Cerita &amp; Kesan Ayah Bunda</div>
-
-  <form id="formCeritaAyahBunda" style="display: grid; gap: 6px; padding: 9px 10px; border: 1px solid #e2e8f0; border-radius: 8px; background: #ffffff;">
-    <div>
-      <input type="text" id="namaOrtu" name="namaOrtu" required placeholder="Nama Ayah / Bunda / Wali Murid (cth: Bunda Azka)" aria-label="Nama Ayah / Bunda / Wali Murid" style="width: 100%; padding: 5px 8px; font-size: 0.84rem; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box;" />
+  <section id="cerita-ayah-bunda" style="padding: 18px 0 8px;">
+    <div class="container">
+      <div style="background: #ffffff; border: 1.5px solid #fde68a; border-radius: 22px; padding: 18px 20px; box-shadow: 0 8px 20px -12px rgba(15, 23, 42, 0.14);">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px;">
+          <h2 style="font-family: 'Fredoka', sans-serif; font-size: 1.2rem; font-weight: 700; color: #0f172a; margin: 0;">Cerita &amp; Kesan Pesan Ayah Bunda</h2>
+          <span style="font-size: 0.75rem; font-weight: 800; color: #854d0e; background: #fef08a; padding: 3px 10px; border-radius: 9999px;">Orang Tua Murid</span>
+        </div>
+        <div id="daftarCeritaAyahBunda" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; align-items: start;">
+          <p style="font-size: 0.82rem; color: #64748b; margin: 0;">Memuat cerita Ayah Bunda...</p>
+        </div>
+      </div>
     </div>
-
-    <div>
-      <textarea id="isiCerita" name="isiCerita" rows="1" required placeholder="Cerita, kesan pesan, atau caption foto..." aria-label="Cerita, Kesan Pesan & Caption Foto" style="width: 100%; padding: 5px 8px; font-size: 0.84rem; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; resize: vertical; min-height: 32px;"></textarea>
-    </div>
-
-    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px;">
-      <input type="file" id="fotoCerita" name="fotoCerita" accept="image/jpeg,image/png,image/webp" style="font-size: 0.76rem; max-width: 70%;" />
-      <button type="submit" id="btnKirimCerita" style="padding: 5px 11px; font-size: 0.8rem; border: none; border-radius: 6px; background: #14532d; color: #ffffff; font-weight: 600; cursor: pointer;">
-        Kirim
-      </button>
-    </div>
-    <span id="statusCerita" style="font-size: 0.78rem;"></span>
-  </form>
-
-  <div id="daftarCeritaAyahBunda" style="display: flex; flex-direction: column; gap: 7px; margin-top: 10px;">
-    <p style="font-size: 0.82rem;">Memuat cerita Ayah Bunda...</p>
-  </div>
-</section>
-  <!-- FOOTER & LOKASI -->
+  </section>
+<!-- FOOTER & LOKASI -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -1474,13 +1534,29 @@
             </iframe>
           </div>
         </div>
-      </div>
+
+              </div>
 
       <div class="footer-bottom">
         &copy; <span id="tahunSekarang"></span> KOBER Miftahul Ulum Cicalengka. Hak Cipta Dilindungi.
       </div>
     </div>
   </footer>
+
+  <section id="form-cerita-bawah" style="padding: 24px 0 32px;">
+    <div class="container">
+      <form id="formCeritaAyahBunda" style="max-width: 760px; margin: 0 auto; display: grid; gap: 10px; padding: 18px 20px; border: 1.5px solid #fde68a; border-radius: 20px; background: #ffffff; box-shadow: 0 8px 20px -12px rgba(15, 23, 42, 0.14);">
+        <div style="font-family: 'Fredoka', sans-serif; font-size: 1.1rem; font-weight: 700; color: #0f172a;">Tulis Cerita, Kesan Pesan &amp; Foto Ayah Bunda</div>
+        <input type="text" id="namaOrtu" name="namaOrtu" required placeholder="Nama Ayah / Bunda / Wali Murid" aria-label="Nama Ayah / Bunda / Wali Murid" style="width: 100%; padding: 8px 12px; font-size: 0.86rem; border: 1px solid #cbd5e1; border-radius: 10px; box-sizing: border-box;" />
+        <textarea id="isiCerita" name="isiCerita" rows="2" required placeholder="Cerita, kesan pesan, atau caption foto..." aria-label="Cerita, Kesan Pesan & Caption Foto" style="width: 100%; padding: 8px 12px; font-size: 0.86rem; border: 1px solid #cbd5e1; border-radius: 10px; box-sizing: border-box; resize: vertical; min-height: 54px;"></textarea>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px;">
+          <input type="file" id="fotoCerita" name="fotoCerita" accept="image/jpeg,image/png,image/webp" style="font-size: 0.78rem; max-width: 75%;" />
+          <button type="submit" id="btnKirimCerita" style="padding: 8px 18px; font-size: 0.85rem; border: none; border-radius: 10px; background: #16a34a; color: #ffffff; font-weight: 800; cursor: pointer;">Kirim</button>
+        </div>
+        <span id="statusCerita" style="font-size: 0.8rem; font-weight: 700; color: #15803d;"></span>
+      </form>
+    </div>
+  </section>
 
 
   <!-- TOMBOL WHATSAPP MELAYANG -->
@@ -1718,21 +1794,57 @@
     return div.innerHTML;
   }
 
+  function getInisialNama(nama) {
+    const bersih = (nama || 'AB').trim();
+    if (!bersih) return 'AB';
+    const bagian = bersih.split(/\s+/);
+    if (bagian.length === 1) return bagian[0].slice(0, 2).toUpperCase();
+    return (bagian[0][0] + bagian[1][0]).toUpperCase();
+  }
+
   function renderDaftarCerita(items) {
     if (!items || items.length === 0) {
-      daftarEl.innerHTML = '<p style="font-size: 0.82rem;">Belum ada cerita yang ditampilkan. Jadilah yang pertama berbagi cerita!</p>';
+      daftarEl.innerHTML = '<p style="font-size: 0.82rem; color: #64748b; margin: 0;">Belum ada komentar atau cerita dari Ayah Bunda.</p>';
       return;
     }
 
-    daftarEl.innerHTML = items.map(item => `
-      <article style="border: 1px solid #e2e8f0; border-radius: 8px; padding: 7px 10px; background: #ffffff; font-size: 0.83rem;">
-        <div style="font-weight: 700; margin-bottom: 2px; font-size: 0.84rem;">${escapeHtml(item.nama)}</div>
-        <p style="margin: 0; white-space: pre-line; line-height: 1.35;">${escapeHtml(item.kesanPesan)}</p>
-        ${item.fotoUrl ? `<img src="${escapeHtml(item.fotoUrl)}" alt="Foto dari ${escapeHtml(item.nama)}" loading="lazy" style="display: block; max-width: 180px; max-height: 110px; width: auto; height: auto; object-fit: contain; border-radius: 6px; margin-top: 6px; background: #f8fafc;" />` : ''}
-      </article>
-    `).join('');
-  }
+    daftarEl.style.display = 'flex';
+    daftarEl.style.flexDirection = 'column';
+    daftarEl.style.gap = '10px';
 
+    daftarEl.innerHTML = items.map(item => {
+      const rawNama = item.nama || 'Ayah / Bunda';
+      const safeNama = escapeHtml(rawNama);
+      const safeInisial = escapeHtml(getInisialNama(rawNama));
+      const safePesan = escapeHtml(item.kesanPesan || '');
+      const safeFoto = item.fotoUrl ? escapeHtml(item.fotoUrl) : '';
+      const safeWaktu = item.waktu || item.timestamp || item.tanggal ? escapeHtml(String(item.waktu || item.timestamp || item.tanggal)) : 'Baru saja';
+      const safeJsNama = safeNama.replace(/'/g, "\\'");
+      const safeJsFoto = safeFoto.replace(/'/g, "\\'");
+
+      return `
+        <div style="display: flex; align-items: flex-start; gap: 10px;">
+          <div aria-hidden="true" style="width: 34px; height: 34px; border-radius: 9999px; background: #dbeafe; color: #0369a1; font-weight: 800; font-size: 0.78rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; border: 1px solid #bfdbfe;">
+            ${safeInisial}
+          </div>
+          <div style="flex: 1; min-width: 0;">
+            <article style="display: inline-block; max-width: 100%; background: #f1f5f9; border-radius: 16px; padding: 8px 13px; border: 1px solid #e2e8f0;">
+              <div style="font-weight: 800; font-size: 0.82rem; color: #0f172a; line-height: 1.25; margin-bottom: 2px;">${safeNama}</div>
+              <p style="margin: 0; white-space: pre-line; color: #1e293b; font-size: 0.84rem; line-height: 1.42; word-break: break-word;">${safePesan}</p>
+            </article>
+            ${safeFoto ? `
+              <div style="margin-top: 6px;">
+                <img src="${safeFoto}" alt="Foto dari ${safeNama}" loading="lazy" onclick="bukaFoto('${safeJsFoto}', 'Komentar ${safeJsNama}')" style="display: block; max-width: 210px; max-height: 150px; width: auto; height: auto; object-fit: cover; border-radius: 12px; border: 1px solid #cbd5e1; cursor: pointer; background: #ffffff;" />
+              </div>
+            ` : ''}
+            <div style="margin-top: 3px; padding-left: 8px; font-size: 0.72rem; font-weight: 700; color: #64748b;">
+              <span>${safeWaktu}</span>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
   async function muatCerita() {
     try {
       const res = await fetch(SCRIPT_URL);
