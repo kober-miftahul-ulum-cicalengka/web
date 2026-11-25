@@ -1391,38 +1391,29 @@
     </div>
   </section>
 
-<section id="cerita-ayah-bunda" style="max-width: 960px; margin: 48px auto; padding: 24px;">
-  <h2 style="margin-bottom: 8px;">Cerita &amp; Kesan Ayah Bunda</h2>
-  <p style="margin-top: 0; margin-bottom: 20px;">
-    Bagikan cerita, kesan pesan, atau keterangan foto Ayah Bunda untuk keluarga besar KOBER Miftahul Ulum Cicalengka.
-  </p>
+<section id="cerita-ayah-bunda" style="max-width: 540px; margin: 20px auto; padding: 10px 12px;">
+  <div style="font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; color: #0f172a;">Cerita &amp; Kesan Ayah Bunda</div>
 
-  <form id="formCeritaAyahBunda" style="display: grid; gap: 12px; padding: 18px; border: 1px solid #e5e7eb; border-radius: 12px;">
+  <form id="formCeritaAyahBunda" style="display: grid; gap: 6px; padding: 9px 10px; border: 1px solid #e2e8f0; border-radius: 8px; background: #ffffff;">
     <div>
-      <label for="namaOrtu" style="display: block; font-weight: 600; margin-bottom: 4px;">Nama Ayah / Bunda / Wali Murid</label>
-      <input type="text" id="namaOrtu" name="namaOrtu" required placeholder="Contoh: Bunda Azka" style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 8px; box-sizing: border-box;" />
+      <input type="text" id="namaOrtu" name="namaOrtu" required placeholder="Nama Ayah / Bunda / Wali Murid (cth: Bunda Azka)" aria-label="Nama Ayah / Bunda / Wali Murid" style="width: 100%; padding: 5px 8px; font-size: 0.84rem; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box;" />
     </div>
 
     <div>
-      <label for="isiCerita" style="display: block; font-weight: 600; margin-bottom: 4px;">Cerita, Kesan Pesan &amp; Caption Foto</label>
-      <textarea id="isiCerita" name="isiCerita" rows="4" required placeholder="Tuliskan cerita, kesan pesan, atau keterangan foto Ayah Bunda di sini..." style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 8px; box-sizing: border-box;"></textarea>
+      <textarea id="isiCerita" name="isiCerita" rows="1" required placeholder="Cerita, kesan pesan, atau caption foto..." aria-label="Cerita, Kesan Pesan & Caption Foto" style="width: 100%; padding: 5px 8px; font-size: 0.84rem; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; resize: vertical; min-height: 32px;"></textarea>
     </div>
 
-    <div>
-      <label for="fotoCerita" style="display: block; font-weight: 600; margin-bottom: 4px;">Tambah Foto (Opsional, maks. 4 MB)</label>
-      <input type="file" id="fotoCerita" name="fotoCerita" accept="image/jpeg,image/png,image/webp" />
-    </div>
-
-    <div>
-      <button type="submit" id="btnKirimCerita" style="padding: 10px 18px; border: none; border-radius: 8px; background: #14532d; color: #ffffff; font-weight: 600; cursor: pointer;">
-        Kirim Cerita
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px;">
+      <input type="file" id="fotoCerita" name="fotoCerita" accept="image/jpeg,image/png,image/webp" style="font-size: 0.76rem; max-width: 70%;" />
+      <button type="submit" id="btnKirimCerita" style="padding: 5px 11px; font-size: 0.8rem; border: none; border-radius: 6px; background: #14532d; color: #ffffff; font-weight: 600; cursor: pointer;">
+        Kirim
       </button>
-      <span id="statusCerita" style="margin-left: 10px; font-size: 0.95rem;"></span>
     </div>
+    <span id="statusCerita" style="font-size: 0.78rem;"></span>
   </form>
 
-  <div id="daftarCeritaAyahBunda" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 28px;">
-    <p>Memuat cerita Ayah Bunda...</p>
+  <div id="daftarCeritaAyahBunda" style="display: flex; flex-direction: column; gap: 7px; margin-top: 10px;">
+    <p style="font-size: 0.82rem;">Memuat cerita Ayah Bunda...</p>
   </div>
 </section>
   <!-- FOOTER & LOKASI -->
@@ -1729,15 +1720,15 @@
 
   function renderDaftarCerita(items) {
     if (!items || items.length === 0) {
-      daftarEl.innerHTML = '<p>Belum ada cerita yang ditampilkan. Jadilah yang pertama berbagi cerita!</p>';
+      daftarEl.innerHTML = '<p style="font-size: 0.82rem;">Belum ada cerita yang ditampilkan. Jadilah yang pertama berbagi cerita!</p>';
       return;
     }
 
     daftarEl.innerHTML = items.map(item => `
-      <article style="border: 1px solid #e5e7eb; border-radius: 12px; padding: 14px; background: #ffffff;">
-        ${item.fotoUrl ? `<img src="${escapeHtml(item.fotoUrl)}" alt="Foto dari ${escapeHtml(item.nama)}" loading="lazy" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 10px;" />` : ''}
-        <div style="font-weight: 700; margin-bottom: 6px;">${escapeHtml(item.nama)}</div>
-        <p style="margin: 0; white-space: pre-line; line-height: 1.5;">${escapeHtml(item.kesanPesan)}</p>
+      <article style="border: 1px solid #e2e8f0; border-radius: 8px; padding: 7px 10px; background: #ffffff; font-size: 0.83rem;">
+        <div style="font-weight: 700; margin-bottom: 2px; font-size: 0.84rem;">${escapeHtml(item.nama)}</div>
+        <p style="margin: 0; white-space: pre-line; line-height: 1.35;">${escapeHtml(item.kesanPesan)}</p>
+        ${item.fotoUrl ? `<img src="${escapeHtml(item.fotoUrl)}" alt="Foto dari ${escapeHtml(item.nama)}" loading="lazy" style="display: block; max-width: 180px; max-height: 110px; width: auto; height: auto; object-fit: contain; border-radius: 6px; margin-top: 6px; background: #f8fafc;" />` : ''}
       </article>
     `).join('');
   }
